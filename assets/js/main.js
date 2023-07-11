@@ -29,19 +29,39 @@ function createCoffeeDetails(coffee) {
     const container = document.createElement('div');
     container.classList.add('coffee-details');
 
+    const titleRow = document.createElement('div');
+    titleRow.setAttribute('class', 'row');
+    const titleColumn = document.createElement('div');
+    titleColumn.setAttribute('class', 'col justify-content-center');
     const title = document.createElement('h1');
     title.textContent = coffee.title;
-    container.appendChild(title);
+    titleColumn.appendChild(title);
+    titleRow.appendChild(titleColumn);
+    container.appendChild(titleRow);
 
+    const contentRow = document.createElement('div');
+    contentRow.setAttribute('class', 'row');
+    const imageColumn = document.createElement('div');
+    imageColumn.setAttribute('class', 'col');
     const image = document.createElement('img');
     image.src = coffee.image;
     image.alt = coffee.title;
-    container.appendChild(image);
+    image.setAttribute('class', 'img-fluid rounded-5');
+    imageColumn.appendChild(image);
+    contentRow.appendChild(imageColumn)
 
+    const descriptionColumn = document.createElement('div');
+    descriptionColumn.setAttribute('class', 'col');
+    const descriptionRow = document.createElement('div');
+    descriptionRow.setAttribute('class', 'row');
     const description = document.createElement('p');
     description.textContent = coffee.description;
-    container.appendChild(description);
 
+    descriptionRow.appendChild(description);
+    descriptionColumn.appendChild(descriptionRow);
+
+    const ingredientsRow = document.createElement('div');
+    ingredientsRow.setAttribute('class', 'row');
     const ingredientsList = document.createElement('ul');
     const ingredientsLabel = document.createElement('legend');
     ingredientsLabel.textContent = 'Ingredients'
@@ -52,7 +72,11 @@ function createCoffeeDetails(coffee) {
         listItem.textContent = ingredient;
         ingredientsList.appendChild(listItem);
     });
-    container.appendChild(ingredientsList);
+
+    ingredientsRow.appendChild(ingredientsList);
+    descriptionColumn.appendChild(ingredientsRow);
+    contentRow.appendChild(descriptionColumn);
+    container.appendChild(contentRow);
 
     return container;
 }
