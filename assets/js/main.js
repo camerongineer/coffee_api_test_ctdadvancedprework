@@ -89,5 +89,5 @@ document.addEventListener('DOMContentLoaded', () => {
     loadAllCoffee();
     setTimeout(() => {
         loadRandomDrink();
-    }, 400);
+    }, 500);
 });
