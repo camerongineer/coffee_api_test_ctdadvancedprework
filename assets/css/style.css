@@ -1,0 +1,93 @@
+html, body {
+    color: whitesmoke;
+    font-size: larger;
+    max-height: 100%;
+    user-select: none;
+}
+
+#header, h1 {
+    -webkit-text-stroke: 2px black;
+    -webkit-text-fill-color: white;
+    color: white;
+    text-align: center;
+    font-size: xxx-large;
+    margin-bottom: 30px;
+}
+
+#label {
+    text-align: center;
+    -webkit-text-stroke: 1px black;
+}
+
+label {
+    padding-right: 10px;
+    padding-left: 3px;
+    padding-top: 30px;
+}
+
+#main {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#content {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    padding-right: 40px;
+    border: black 5px solid;
+}
+
+body {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: contain;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.btn {
+    margin-top: 1px;
+}
+
+.container {
+    display: flex;
+    padding-top: 50px;
+    align-items: center;
+    min-height: 100%;
+}
+
+
+img {
+    max-height: 40vh;
+}
+
+
+.row {
+    text-align: right;
+    justify-items: center;
+}
+
+#options {
+    text-align: center;
+}
+
+#link {
+    padding-right: 15px;
+}
+
+.custom-rounded {
+    border-radius: 25px;
+}
