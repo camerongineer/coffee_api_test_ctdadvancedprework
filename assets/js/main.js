@@ -32,26 +32,27 @@ function createCoffeeDetails(coffee) {
     const titleRow = document.createElement('div');
     titleRow.setAttribute('class', 'row');
     const titleColumn = document.createElement('div');
-    titleColumn.setAttribute('class', 'col justify-content-center');
-    const title = document.createElement('h1');
+    titleColumn.setAttribute('class', 'col');
+    const title = document.createElement('h3');
+    title.setAttribute('style', 'font-size: xxx-large; margin-top: 30px;');
     title.textContent = coffee.title;
     titleColumn.appendChild(title);
     titleRow.appendChild(titleColumn);
     container.appendChild(titleRow);
 
     const contentRow = document.createElement('div');
-    contentRow.setAttribute('class', 'row');
+    contentRow.setAttribute('class', 'row justify-content-around');
     const imageColumn = document.createElement('div');
-    imageColumn.setAttribute('class', 'col');
+    imageColumn.setAttribute('class', 'col-7 d-flex align-items-center justify-content-center"');
     const image = document.createElement('img');
     image.src = coffee.image;
     image.alt = coffee.title;
-    image.setAttribute('class', 'img-fluid rounded-5');
+    image.setAttribute('class', 'img-fluid m-auto rounded-5');
     imageColumn.appendChild(image);
     contentRow.appendChild(imageColumn)
 
     const descriptionColumn = document.createElement('div');
-    descriptionColumn.setAttribute('class', 'col');
+    descriptionColumn.setAttribute('class', 'col-5');
     const descriptionRow = document.createElement('div');
     descriptionRow.setAttribute('class', 'row');
     const description = document.createElement('p');
@@ -61,7 +62,7 @@ function createCoffeeDetails(coffee) {
     descriptionColumn.appendChild(descriptionRow);
 
     const ingredientsRow = document.createElement('div');
-    ingredientsRow.setAttribute('class', 'row');
+    ingredientsRow.setAttribute('class', 'row justify-self-end');
     const ingredientsList = document.createElement('ul');
     const ingredientsLabel = document.createElement('legend');
     ingredientsLabel.textContent = 'Ingredients'
@@ -102,16 +103,12 @@ function displayCoffeeDetails(coffee) {
     contentElement.appendChild(coffeeTable);
 }
 
-function loadRandomDrink() {
-    const type = document.getElementById('radio-hot').checked ? 'hot' : 'iced';
+function loadRandomDrink(type) {
     const coffee = coffeeDrinks[type][randomNum(coffeeDrinks[type].length)];
     displayCoffeeDetails(coffee);
 }
-
-document.getElementById('button-random-drink').addEventListener('click', loadRandomDrink);
+const loadRandomHotDrink = () => loadRandomDrink('hot');
+const loadRandomIcedDrink = () => loadRandomDrink('iced');
 document.addEventListener('DOMContentLoaded', () => {
     loadAllCoffee();
-    setTimeout(() => {
-        loadRandomDrink();
-    }, 500);
 });

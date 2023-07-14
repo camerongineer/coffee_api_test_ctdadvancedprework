@@ -2,24 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Coffee API Pre-work - Hot Coffee</title>
+    <title>Coffee API Pre-work - Iced Coffee</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
         #content {
-            background-color: rgba(65, 41, 14, 0.56);
+            background-color: rgb(16, 57, 82, 0.5);
         }
 
         body {
-            background-image: url('assets/images/coffee_background.jpg');
+            background-image: url('assets/images/iced_coffee_background.png');
         }
 
         body:before {
-            background-color: rgba(129, 72, 30, 0.48);
+            background-color: rgba(92, 156, 196, 0.5);
         }
 
         #label {
-            color: darkred;
+            color: darkblue;
         }
 
     </style>
@@ -28,7 +28,7 @@
 <div class="row align-items-end fixed-top">
     <div class="col text-end">
         <div style="margin-right: 10px;">
-            <a href="index_iced.html" style="font-size: 14px;">View Iced Coffee Drinks</a>
+            <a href="index.html" style="font-size: 14px; color: red;">View Hot Coffee Drinks</a>
         </div>
     </div>
 </div>
@@ -36,13 +36,13 @@
     <div class="row">
         <div class="col">
             <div id="header"><h1>Coffee API Demo</h1></div>
-            <div id="label"><h2>Hot Coffee</h2></div>
+            <div id="label"><h2>Iced Coffee</h2></div>
         </div>
     </div>
     <div class="row align-content-around">
         <div class="col">
             <div id="options">
-                <button class="btn btn-primary shadow-lg" id="button-random-hot-drink">Show Random Drink</button>
+                <button class="btn btn-primary shadow-lg" id="button-random-iced-drink">Show Random Drink</button>
             </div>
             <div id="content" class="row align-items-center h-100 custom-rounded container-fluid" style="display: none;"></div>
         </div>
@@ -52,12 +52,12 @@
 <script src="assets/js/main.js"></script>
 <script>
     const container = document.getElementById('content');
-    document.getElementById('button-random-hot-drink').addEventListener('click', function () {
+    document.getElementById('button-random-iced-drink').addEventListener('click', function () {
         if (container.style.display === 'none') {
-            loadRandomHotDrink();
+            loadRandomIcedDrink();
             container.style.display = 'block';
         }
-        document.getElementById('button-random-hot-drink').addEventListener('click', loadRandomHotDrink);
+        document.getElementById('button-random-iced-drink').addEventListener('click', loadRandomIcedDrink);
     });
 </script>
 </body>
